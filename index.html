@@ -361,45 +361,33 @@
   }
 
   .site-fab {
-    position: fixed;
-    bottom: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00eeff 0%, #0077ff 55%, #0033cc 100%);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    gap: 7px;
+    margin-top: 16px;
+    padding: 10px 28px;
+    border-radius: 8px;
+    background: #04152e;
+    border: 1.5px solid #00cfff;
+    box-shadow: 0 0 12px rgba(0,180,255,0.18), inset 0 0 8px rgba(0,100,255,0.08);
     text-decoration: none;
-    color: #fff;
+    color: #7dd8ff;
     font-family: var(--font-display);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    z-index: 200;
-    animation: btn-shimmer 2s ease-in-out infinite;
-    transition: transform 0.2s, filter 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+    position: relative;
   }
-  .site-fab:hover { transform: translateX(-50%) scale(1.1); filter: brightness(1.2); }
-  .site-fab-inner { line-height: 1.4; font-size: 0.7rem; pointer-events: none; }
-  .site-fab-inner span { display: block; font-size: 0.75rem; }
-
-  .site-fab-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 2px solid #00cfff;
-    animation: pulse-ring 2s ease-out infinite;
-    pointer-events: none;
+  .site-fab:hover {
+    border-color: #00eeff;
+    color: #00eeff;
+    box-shadow: 0 0 22px rgba(0,220,255,0.3), inset 0 0 12px rgba(0,150,255,0.12);
   }
-  .site-fab-ring2 {
-    border-color: #0066ff;
-    animation: pulse-ring2 2s ease-out infinite 0.5s;
-  }
+  .site-fab-inner { pointer-events: none; }
+  .site-fab-ring, .site-fab-ring2 { display: none; }
 
   .by-nox {
     margin-top: 18px;
@@ -436,6 +424,9 @@
       <div class="logo">XNB Editor</div>
     </div>
     <div class="by-nox">By <span>Nox Games</span></div>
+    <a href="https://is.gd/NoxGamess" target="_blank" class="site-fab">
+      <span class="site-fab-inner">🌐 Site</span>
+    </a>
   </header>
 
   <div class="drop-zone" id="dropZone">
@@ -465,11 +456,7 @@
 
 <div class="toast" id="toast"></div>
 
-<a href="https://is.gd/NoxGamess" target="_blank" class="site-fab">
-  <span class="site-fab-ring"></span>
-  <span class="site-fab-ring site-fab-ring2"></span>
-  <span class="site-fab-inner">🌐<br><span>Site</span></span>
-</a>
+
 
 <script>
 // ─── Varint helpers ───────────────────────────────────────────────
